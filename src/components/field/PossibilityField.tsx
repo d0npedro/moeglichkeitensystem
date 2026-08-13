@@ -206,6 +206,16 @@ function FieldSvg({ items }: { items: ViewedAffordance[] }) {
         stroke="var(--color-primary)"
         strokeWidth="1.5"
       />
+      <text
+        x={rnd(CX + 12)}
+        y={rnd(CY + radiusPlot - 8)}
+        fill="var(--color-primary)"
+        fontSize="10"
+        fontFamily="var(--font-sans)"
+        letterSpacing="0.14em"
+      >
+        EMPFANG
+      </text>
 
       <path
         d={fovPath(CX, CY, facingDeg, fovDeg, radiusPlot)}
@@ -376,8 +386,26 @@ function FieldSvg({ items }: { items: ViewedAffordance[] }) {
       ))}
 
       <g transform={`translate(${CX} ${CY})`} className="pointer-events-none">
+        <circle
+          r="28"
+          fill="none"
+          stroke="var(--color-primary)"
+          strokeWidth="1"
+          strokeDasharray="3 4"
+          opacity="0.7"
+        />
         <circle r="10" fill="var(--color-elevated)" stroke="var(--color-primary)" strokeWidth="1.7" />
         <circle r="2.3" fill="var(--color-primary)" />
+        <text
+          y="-34"
+          textAnchor="middle"
+          fill="var(--color-primary)"
+          fontSize="10"
+          fontFamily="var(--font-sans)"
+          letterSpacing="0.14em"
+        >
+          AUSSTRAHLUNG
+        </text>
         {innerCut > 0 ? (
           <text
             y="22"

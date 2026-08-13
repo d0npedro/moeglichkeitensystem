@@ -69,7 +69,8 @@ export const CHAPTERS = [
   { id: "drei", label: "6 · Eine Beobachtung" },
   { id: "kern", label: "7 · Drei Welten" },
   { id: "methode", label: "8 · Das Instrument" },
-  { id: "verdrahtung", label: "9 · Verdrahtung" },
+  { id: "aura", label: "9 · Die Aura" },
+  { id: "verdrahtung", label: "10 · Verdrahtung" },
   { id: "glossar", label: "Glossar" },
 ] as const;
 

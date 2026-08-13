@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { PRINCIPLES } from "@/lib/moeglichkeiten/aura";
 import { Chapter, Recap } from "./shell";
 
 export function Abstract() {
@@ -42,8 +43,13 @@ export function Abstract() {
           <a href="#kern" className="underline-offset-4 hover:underline">
             Kapitel 7
           </a>
-          . Software und Hardware verdrahten das oft so, als gäbe es nur eine Liste für alle. Diese
-          Arbeit zeichnet die Liste dreimal. Die Verdrahtung kommt später.
+          . Die Vision steht in{" "}
+          <a href="#aura" className="underline-offset-4 hover:underline">
+            Kapitel 9
+          </a>
+          : eine Aura, die mit der Nähe über ein Regelwerk sprechen darf. Und eine Informationsaura,
+          die du in die Umgebung ausstrahlst. Das gibt es so nicht. Deshalb kommen die Sätze vor der
+          Verdrahtung.
         </p>
       </div>
     </section>
@@ -61,8 +67,8 @@ export function HowToRead() {
       <p>Diese Arbeit ist für ein Tablet geschrieben. Du kannst sie auch am Telefon lesen.</p>
       <p>Jedes Kapitel hat eine Aufgabe. Am Ende steht sie noch einmal in zwei Zeilen.</p>
       <p>
-        Drei Wörter kehren immer wieder: Angebot. Umwelt. Lebensraum. Sie werden beim ersten Mal
-        erklärt. Danach bleiben sie. Ein{" "}
+        Drei Wörter kehren immer wieder: Angebot. Umwelt. Lebensraum. Später kommt ein viertes: Aura.
+        Sie werden beim ersten Mal erklärt. Danach bleiben sie. Ein{" "}
         <a href="#glossar" className="underline-offset-4 hover:underline">
           Glossar
         </a>{" "}
@@ -76,7 +82,7 @@ export function HowToRead() {
         ist kein Schmuck. Es ist die Methode. Dieselbe Mitte. Drei Schalter: Mensch, Entwickler,
         Roboter.
       </p>
-      <Recap>Lies die Kurzfassung. Dann Kapitel 1 und Kapitel 7. Dann öffne das Feld.</Recap>
+      <Recap>Lies die Kurzfassung. Dann Kapitel 1, 7 und 9. Dann öffne das Feld.</Recap>
     </Chapter>
   );
 }
@@ -333,14 +339,78 @@ export function Method() {
   );
 }
 
+export function AuraChapter() {
+  return (
+    <Chapter
+      id="aura"
+      number="9"
+      title="Die Aura. Zwei Richtungen."
+      about="Was es so noch nicht gibt. Deshalb müssen die Sätze stehen, bevor jemand verdrahtet. Sonst ändert sich die Welt nicht."
+    >
+      <p>Bisher beschreibt diese Arbeit, was ein Ort einem Körper gibt.</p>
+      <p>Das ist nur eine Richtung. Empfang.</p>
+      <p>Die andere Richtung fehlt in der Welt noch ganz.</p>
+      <p>
+        Ein Körper strahlt in die Nähe etwas aus. Nicht Stimmung. Information, die die Umgebung
+        lesen darf.
+      </p>
+      <p>Wer du bist. Wie weit dein Horizont reicht. Wohin du blickst. Was du freigibst.</p>
+      <p>Das ist die Informationsaura.</p>
+      <p>
+        Zusammen sind Empfang und Ausstrahlung eine Aura: der Nahbereich, in dem Ort und Körper über
+        ein gemeinsames Regelwerk sprechen dürfen.
+      </p>
+      <p>Das gibt es so nicht.</p>
+      <p>Es gibt Inventar in einer App. Befehle in die Cloud. Telemetrie zurück. Eine Firma in der Mitte.</p>
+      <p>
+        Es gibt keine Nähe, die ohne Konto sprechen darf. Keine Ausstrahlung, die der Raum lesen
+        darf, ohne dich zu besitzen. Kein Regelwerk, das ein fremdes Ding lernen kann.
+      </p>
+      <p>Ohne diese Sätze verdrahtet jede Werkstatt ihre eigene Welt. Dann bleibt alles, wie es ist.</p>
+      <h3 className="pt-2 font-display text-2xl">Neun Sätze</h3>
+      <ol className="list-decimal space-y-4 pl-5">
+        {PRINCIPLES.map((p) => (
+          <li key={p.id}>
+            <span className="font-medium">{p.title}.</span> {p.body}
+          </li>
+        ))}
+      </ol>
+      <h3 className="pt-2 font-display text-2xl">Im Studio</h3>
+      <p>Du stehst in der Mitte. Der Schalter bietet: drücken. Das ist Empfang.</p>
+      <p>Du strahlst aus: Mensch. Acht Meter. Blick zur Ecke. Bereit, zu gehen.</p>
+      <p>Der Schalter darf das lesen. Die Bäckerei hinter dem Horizont darf es nicht.</p>
+      <p>
+        Wechselst du auf Roboter, ändert sich die Ausstrahlung. Maß. Boden. Strom. Derselbe Raum.
+        Andere Aura.
+      </p>
+      <p>
+        Das{" "}
+        <Link to="/feld" className="underline-offset-4 hover:underline">
+          Feld
+        </Link>{" "}
+        zeigt beides. Der äußere Kreis ist Empfang. Der gestrichelte Kreis in der Mitte ist
+        Ausstrahlung.
+      </p>
+      <Recap>Aura ist Nähe mit Erlaubnis, in zwei Richtungen. Erst die Sätze. Dann die Drähte.</Recap>
+    </Chapter>
+  );
+}
+
 export function Wiring() {
   return (
     <Chapter
       id="verdrahtung"
-      number="9"
+      number="10"
       title="Was sich verdrahten lässt. Später."
-      about="Keine Produktliste. Folgen, die da sind, sobald man die Beobachtung ernst nimmt."
+      about="Keine Produktliste. Folgen der Sätze. Erst das Regelwerk. Dann die Drähte."
     >
+      <p>
+        Kapitel{" "}
+        <a href="#aura" className="underline-offset-4 hover:underline">
+          9
+        </a>{" "}
+        steht extra davor. Wer ohne die neun Sätze verdrahtet, baut wieder Inventar.
+      </p>
       <p>Wenn das stimmt, ist eine App, die alle Geräte der Wohnung auflistet, noch kein Möglichkeitensystem.</p>
       <p>Sie kennt Inventar. Sie kennt nicht den Standpunkt.</p>
       <p>Eine Navigation kennt Asphalt. Sie kennt nicht, dass du um halb acht nur das Milchbrötchen willst.</p>

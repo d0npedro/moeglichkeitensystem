@@ -57,8 +57,28 @@ const ENTRIES = [
     def: "Was jetzt das Nächste ist. Sichtbar. Erreichbar. Passend zur Lage. Nicht: alles, was möglich wäre.",
   },
   {
+    id: "wort-aura",
+    term: "Aura",
+    def: "Der Nahbereich, in dem Ort und Körper über ein Regelwerk sprechen dürfen. Zwei Richtungen: Empfang und Ausstrahlung. Kein Funk-Marketing. Ein Horizont mit Erlaubnis.",
+  },
+  {
+    id: "wort-ausstrahlung",
+    term: "Ausstrahlung",
+    def: "Was du der Nähe zu lesen gibst. Umwelt, Horizont, Blick, Freigabe. Nicht alles, was messbar wäre.",
+  },
+  {
+    id: "wort-empfang",
+    term: "Empfang",
+    def: "Was der Ort dir anbietet. Die erste Richtung dieser Arbeit. Lichtschalter. Bestand. Stufe.",
+  },
+  {
+    id: "wort-regelwerk",
+    term: "Regelwerk",
+    def: "Die Sätze, nach denen Nähe sprechen darf. Standard, nicht Plattform. Ein fremdes Ding kann sie lernen. Ohne Konto.",
+  },
+  {
     id: "wort-verdrahtung",
     term: "Verdrahtung",
-    def: "Später: Software und Hardware so bauen, dass sie die Differenz der Umwelten halten. Nicht eine gemeinsame Liste erzwingen.",
+    def: "Später: Software und Hardware so bauen, dass sie die neun Sätze halten. Nicht eine gemeinsame Liste erzwingen.",
   },
 ];

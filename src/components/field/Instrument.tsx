@@ -15,6 +15,7 @@ import { DimensionFilters } from "./DimensionFilters";
 import { FacingControl } from "./FacingControl";
 import { GazeStrip } from "./GazeStrip";
 import { HorizonList } from "./HorizonList";
+import { AuraPanel } from "./AuraPanel";
 import { Inspector } from "./Inspector";
 import { LocusBar } from "./LocusBar";
 import { PossibilityField } from "./PossibilityField";
@@ -101,6 +102,7 @@ export function Instrument() {
           </div>
 
           <aside className="space-y-4 lg:sticky lg:top-4 lg:self-start">
+            <AuraPanel />
             <Inspector item={selected} />
             <HorizonList items={listed} />
           </aside>

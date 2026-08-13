@@ -6,6 +6,7 @@ import { publicUrl } from "@/lib/paths";
 import { Glossary } from "./Glossary";
 import {
   Abstract,
+  AuraChapter,
   Case,
   GibsonChapter,
   HowToRead,
@@ -96,6 +97,7 @@ export function Foundation() {
         <Together />
         <Kernel />
         <Method />
+        <AuraChapter />
         <Wiring />
         <Glossary />
 
