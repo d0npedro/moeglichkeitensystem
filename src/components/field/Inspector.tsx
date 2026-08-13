@@ -2,18 +2,20 @@ import { Compass, Footprints } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { ViewedAffordance } from "@/lib/moeglichkeiten/types";
+import { inspectorLines } from "@/lib/moeglichkeiten/inspector";
 import {
   dimensionOf,
   formatDistance,
   formatWalk,
   inventoryNow,
   scaleForDistance,
-  sinnReason,
 } from "@/lib/moeglichkeiten/model";
 import { useField } from "@/lib/moeglichkeiten/store";
+import { adapterById } from "@/lib/wiring/adapters";
+import { Link } from "@tanstack/react-router";
 
 export function Inspector({ item }: { item: ViewedAffordance | null }) {
-  const { time, setFacing, goTo, select } = useField();
+  const { time, lage, umwelt, setFacing, goTo, select } = useField();
 
   if (!item) {
     return (
@@ -21,8 +23,8 @@ export function Inspector({ item }: { item: ViewedAffordance | null }) {
         <p className="text-xs font-medium uppercase tracking-widest text-subtle">Auswahl</p>
         <h3 className="mt-2 font-display text-xl text-fg">Keine Marke gewählt</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Tippe eine Marke. Dieselbe Mitte trägt verschiedene Welten — Mensch, Entwickler, Roboter.
-          Die Angebote gehören immer zu einer davon.
+          Tippe eine Marke. Dieselbe Mitte trägt verschiedene Welten. Die Angebote gehören immer zu
+          einer davon.
         </p>
       </section>
     );
@@ -31,6 +33,8 @@ export function Inspector({ item }: { item: ViewedAffordance | null }) {
   const dim = dimensionOf(item.dimension);
   const band = scaleForDistance(item.distanceM);
   const stock = inventoryNow(item, time);
+  const lines = inspectorLines(item, umwelt, time, lage);
+  const adapter = item.wiring ? adapterById(item.wiring.adapterId) : undefined;
 
   return (
     <section className="rounded-xl border border-border bg-surface p-5">
@@ -48,10 +52,24 @@ export function Inspector({ item }: { item: ViewedAffordance | null }) {
         </button>
       </div>
 
-      <p className="mt-3 font-medium text-fg">{item.verb}</p>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
-      <p className="mt-3 text-sm leading-relaxed text-fg">{item.humanUse}</p>
-      <p className="mt-3 text-xs uppercase tracking-widest text-subtle">{sinnReason(item)}</p>
+      <dl className="mt-4 space-y-3 text-sm leading-relaxed">
+        <div>
+          <dt className="text-xs uppercase tracking-widest text-subtle">Was</dt>
+          <dd className="mt-1 text-fg">{lines.was}</dd>
+        </div>
+        <div>
+          <dt className="text-xs uppercase tracking-widest text-subtle">Für wen</dt>
+          <dd className="mt-1 text-fg">{lines.fuerWen}</dd>
+        </div>
+        <div>
+          <dt className="text-xs uppercase tracking-widest text-subtle">Warum jetzt</dt>
+          <dd className="mt-1 text-fg">{lines.warumJetzt}</dd>
+        </div>
+        <div>
+          <dt className="text-xs uppercase tracking-widest text-subtle">Was man tun müsste</dt>
+          <dd className="mt-1 text-fg">{lines.tun}</dd>
+        </div>
+      </dl>
 
       <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
         <div>
@@ -100,6 +118,15 @@ export function Inspector({ item }: { item: ViewedAffordance | null }) {
             ))}
           </ul>
         </div>
+      ) : null}
+
+      {adapter ? (
+        <p className="mt-4 text-sm text-muted">
+          Schnitt: {adapter.label}.{" "}
+          <Link to="/schnitt" className="text-fg underline-offset-4 hover:underline">
+            Verdrahtung
+          </Link>
+        </p>
       ) : null}
 
       {!item.available ? (

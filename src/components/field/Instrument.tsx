@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   countByDimension,
   formatDistance,
@@ -8,6 +8,9 @@ import {
   UMWELTEN,
   viewFrom,
 } from "@/lib/moeglichkeiten/model";
+import { hydrateAtlas } from "@/lib/moeglichkeiten/atlas";
+import { onboarded } from "@/lib/moeglichkeiten/persist";
+import { decodeField, encodeField } from "@/lib/moeglichkeiten/shareField";
 import { useField } from "@/lib/moeglichkeiten/store";
 import { SiteNav } from "@/components/site/SiteNav";
 import { WorkTools } from "@/components/site/WorkTools";
@@ -16,7 +19,9 @@ import { FacingControl } from "./FacingControl";
 import { GazeStrip } from "./GazeStrip";
 import { HorizonList } from "./HorizonList";
 import { Inspector } from "./Inspector";
+import { LageControl } from "./LageControl";
 import { LocusBar } from "./LocusBar";
+import { Onboarding } from "./Onboarding";
 import { PossibilityField } from "./PossibilityField";
 import { RadiusControl } from "./RadiusControl";
 import { TimeControl } from "./TimeControl";
@@ -24,11 +29,24 @@ import { UmweltControl } from "./UmweltControl";
 
 export function Instrument() {
   const store = useField();
-  const { locusId, radiusM, facingDeg, fovDeg, time, dimensions, selectedId, umwelt } = store;
+  const {
+    locusId,
+    radiusM,
+    facingDeg,
+    fovDeg,
+    time,
+    timeLive,
+    lage,
+    dimensions,
+    selectedId,
+    umwelt,
+    atlasTick,
+  } = store;
+  const [welcome, setWelcome] = useState(false);
 
   const items = useMemo(
-    () => viewFrom(locusId, radiusM, facingDeg, fovDeg, time, dimensions, umwelt),
-    [locusId, radiusM, facingDeg, fovDeg, time, dimensions, umwelt],
+    () => viewFrom(locusId, radiusM, facingDeg, fovDeg, time, dimensions, umwelt, lage),
+    [locusId, radiusM, facingDeg, fovDeg, time, dimensions, umwelt, lage, atlasTick],
   );
   const umweltMeta = UMWELTEN.find((u) => u.id === umwelt)!;
   const selected = items.find((i) => i.id === selectedId) ?? null;
@@ -36,6 +54,33 @@ export function Instrument() {
   const inView = listed.filter(isSeen);
   const band = scaleForDistance(radiusM);
   const counts = countByDimension(items);
+
+  useEffect(() => {
+    hydrateAtlas();
+    store.bumpAtlas();
+    const shared = decodeField(window.location.search);
+    if (Object.keys(shared).length) store.applyShare(shared);
+    setWelcome(!onboarded() && !window.location.search);
+    // einmal
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const q = encodeField({
+      umwelt,
+      locusId,
+      radiusM,
+      facingDeg,
+      time,
+      timeLive,
+      lage,
+      selectedId,
+    });
+    const next = `${window.location.pathname}?${q}`;
+    if (`${window.location.pathname}${window.location.search}` !== next) {
+      window.history.replaceState(window.history.state, "", next);
+    }
+  }, [umwelt, locusId, radiusM, facingDeg, time, timeLive, lage, selectedId]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -75,6 +120,7 @@ export function Instrument() {
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
               <TimeControl />
+              <LageControl />
               <FacingControl />
             </div>
           </div>
@@ -106,6 +152,7 @@ export function Instrument() {
           </aside>
         </div>
       </div>
+      {welcome ? <Onboarding onDone={() => setWelcome(false)} /> : null}
     </div>
   );
 }

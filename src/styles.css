@@ -101,6 +101,39 @@
   }
 }
 
+@media print {
+  :root {
+    --color-bg: #fff;
+    --color-surface: #fff;
+    --color-elevated: #fff;
+    --color-wash: #fff;
+  }
+
+  .reader-chrome,
+  .reader-hide,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+
+  a[href^="http"]::after {
+    content: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

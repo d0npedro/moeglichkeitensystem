@@ -15,7 +15,7 @@ import {
   ROOM_LABELS,
   STUDIO_FURNISHINGS,
 } from "@/lib/moeglichkeiten/geometry";
-import { LOCI } from "@/lib/moeglichkeiten/loci";
+import { findLocus } from "@/lib/moeglichkeiten/atlas";
 import { useField } from "@/lib/moeglichkeiten/store";
 import { FieldMark } from "./marks";
 
@@ -62,7 +62,8 @@ function FieldSvg({ items }: { items: ViewedAffordance[] }) {
     setRadius,
   } = useField();
   const root = useRef<SVGSVGElement>(null);
-  const origin = LOCI.find((l) => l.id === locusId)!;
+  const found = findLocus(locusId);
+  const origin = found ?? { id: locusId, name: "—", kind: "", district: "", x: 0, y: 0, defaultFacing: 0, blurb: "" };
 
   const toPlot = (wx: number, wy: number) =>
     worldToPlot(wx, wy, origin.x, origin.y, radiusM, CX, CY, PLOT);
@@ -150,6 +151,14 @@ function FieldSvg({ items }: { items: ViewedAffordance[] }) {
   }, [labeled, origin.x, origin.y, radiusM, selectedId, hoveredId]);
 
   const visibleScales = SCALES.filter((s) => s.toM <= radiusM * 1.15 && s.toM >= radiusM * 0.12);
+
+  if (!found) {
+    return (
+      <div className="grid h-full min-h-80 place-items-center text-sm text-muted">
+        Dieses Zentrum fehlt.
+      </div>
+    );
+  }
 
   return (
     <svg

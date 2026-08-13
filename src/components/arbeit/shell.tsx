@@ -71,6 +71,7 @@ export const CHAPTERS = [
   { id: "methode", label: "8 · Das Instrument" },
   { id: "verdrahtung", label: "9 · Verdrahtung" },
   { id: "glossar", label: "Glossar" },
+  { id: "quellen", label: "Quellen" },
 ] as const;
 
 export function Contents() {

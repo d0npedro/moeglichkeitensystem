@@ -52,6 +52,11 @@ const ENTRIES = [
     def: "Der Rand des Lebensraums. Im Instrument der Radius. Was dahinter liegt, existiert. Es trägt gerade nicht.",
   },
   {
+    id: "wort-lage",
+    term: "Lage",
+    def: "Bei Lewin der Zustand der Person im Feld. Hunger, Müdigkeit, ein Termin. Die Lage ändert den Lebensraum. Nicht die Umgebung.",
+  },
+  {
     id: "wort-sinn",
     term: "Sinn",
     def: "Was jetzt das Nächste ist. Sichtbar. Erreichbar. Passend zur Lage. Nicht: alles, was möglich wäre.",

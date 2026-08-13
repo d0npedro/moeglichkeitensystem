@@ -13,8 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as FeldRouteImport } from './routes/feld'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ModellRouteImport } from './routes/modell'
+import { Route as SchnittRouteImport } from './routes/schnitt'
 import { Route as MoeglichkeitensystemIndexRouteImport } from './routes/moeglichkeitensystem/index'
 import { Route as MoeglichkeitensystemFeldRouteImport } from './routes/moeglichkeitensystem/feld'
+import { Route as MoeglichkeitensystemSchnittRouteImport } from './routes/moeglichkeitensystem/schnitt'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -37,6 +39,11 @@ const ModellRoute = ModellRouteImport.update({
   path: '/modell',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchnittRoute = SchnittRouteImport.update({
+  id: '/schnitt',
+  path: '/schnitt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MoeglichkeitensystemIndexRoute =
   MoeglichkeitensystemIndexRouteImport.update({
     id: '/moeglichkeitensystem/',
@@ -47,6 +54,12 @@ const MoeglichkeitensystemFeldRoute =
   MoeglichkeitensystemFeldRouteImport.update({
     id: '/moeglichkeitensystem/feld',
     path: '/moeglichkeitensystem/feld',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoeglichkeitensystemSchnittRoute =
+  MoeglichkeitensystemSchnittRouteImport.update({
+    id: '/moeglichkeitensystem/schnitt',
+    path: '/moeglichkeitensystem/schnitt',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
@@ -60,7 +73,9 @@ export interface FileRoutesByFullPath {
   '/feld': typeof FeldRoute
   '/login': typeof LoginRoute
   '/modell': typeof ModellRoute
+  '/schnitt': typeof SchnittRoute
   '/moeglichkeitensystem/feld': typeof MoeglichkeitensystemFeldRoute
+  '/moeglichkeitensystem/schnitt': typeof MoeglichkeitensystemSchnittRoute
   '/moeglichkeitensystem/': typeof MoeglichkeitensystemIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -69,7 +84,9 @@ export interface FileRoutesByTo {
   '/feld': typeof FeldRoute
   '/login': typeof LoginRoute
   '/modell': typeof ModellRoute
+  '/schnitt': typeof SchnittRoute
   '/moeglichkeitensystem/feld': typeof MoeglichkeitensystemFeldRoute
+  '/moeglichkeitensystem/schnitt': typeof MoeglichkeitensystemSchnittRoute
   '/moeglichkeitensystem': typeof MoeglichkeitensystemIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -79,7 +96,9 @@ export interface FileRoutesById {
   '/feld': typeof FeldRoute
   '/login': typeof LoginRoute
   '/modell': typeof ModellRoute
+  '/schnitt': typeof SchnittRoute
   '/moeglichkeitensystem/feld': typeof MoeglichkeitensystemFeldRoute
+  '/moeglichkeitensystem/schnitt': typeof MoeglichkeitensystemSchnittRoute
   '/moeglichkeitensystem/': typeof MoeglichkeitensystemIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -90,7 +109,9 @@ export interface FileRouteTypes {
     | '/feld'
     | '/login'
     | '/modell'
+    | '/schnitt'
     | '/moeglichkeitensystem/feld'
+    | '/moeglichkeitensystem/schnitt'
     | '/moeglichkeitensystem/'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
@@ -99,7 +120,9 @@ export interface FileRouteTypes {
     | '/feld'
     | '/login'
     | '/modell'
+    | '/schnitt'
     | '/moeglichkeitensystem/feld'
+    | '/moeglichkeitensystem/schnitt'
     | '/moeglichkeitensystem'
     | '/api/auth/$'
   id:
@@ -108,7 +131,9 @@ export interface FileRouteTypes {
     | '/feld'
     | '/login'
     | '/modell'
+    | '/schnitt'
     | '/moeglichkeitensystem/feld'
+    | '/moeglichkeitensystem/schnitt'
     | '/moeglichkeitensystem/'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
@@ -118,7 +143,9 @@ export interface RootRouteChildren {
   FeldRoute: typeof FeldRoute
   LoginRoute: typeof LoginRoute
   ModellRoute: typeof ModellRoute
+  SchnittRoute: typeof SchnittRoute
   MoeglichkeitensystemFeldRoute: typeof MoeglichkeitensystemFeldRoute
+  MoeglichkeitensystemSchnittRoute: typeof MoeglichkeitensystemSchnittRoute
   MoeglichkeitensystemIndexRoute: typeof MoeglichkeitensystemIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
@@ -153,6 +180,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModellRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/schnitt': {
+      id: '/schnitt'
+      path: '/schnitt'
+      fullPath: '/schnitt'
+      preLoaderRoute: typeof SchnittRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/moeglichkeitensystem/': {
       id: '/moeglichkeitensystem/'
       path: '/moeglichkeitensystem'
@@ -165,6 +199,13 @@ declare module '@tanstack/react-router' {
       path: '/moeglichkeitensystem/feld'
       fullPath: '/moeglichkeitensystem/feld'
       preLoaderRoute: typeof MoeglichkeitensystemFeldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/moeglichkeitensystem/schnitt': {
+      id: '/moeglichkeitensystem/schnitt'
+      path: '/moeglichkeitensystem/schnitt'
+      fullPath: '/moeglichkeitensystem/schnitt'
+      preLoaderRoute: typeof MoeglichkeitensystemSchnittRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/auth/$': {
@@ -182,7 +223,9 @@ const rootRouteChildren: RootRouteChildren = {
   FeldRoute: FeldRoute,
   LoginRoute: LoginRoute,
   ModellRoute: ModellRoute,
+  SchnittRoute: SchnittRoute,
   MoeglichkeitensystemFeldRoute: MoeglichkeitensystemFeldRoute,
+  MoeglichkeitensystemSchnittRoute: MoeglichkeitensystemSchnittRoute,
   MoeglichkeitensystemIndexRoute: MoeglichkeitensystemIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }

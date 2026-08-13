@@ -8,7 +8,7 @@ export function WorkTools({
   reader,
   onReader,
 }: {
-  path?: "" | "/feld";
+  path?: "" | "/feld" | "/schnitt";
   reader?: boolean;
   onReader?: () => void;
 }) {
@@ -28,6 +28,15 @@ export function WorkTools({
           Lesen
         </button>
       ) : null}
+      {path === "" ? (
+        <button
+          type="button"
+          onClick={() => window.print()}
+          className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 text-sm text-muted hover:bg-wash hover:text-fg"
+        >
+          Drucken
+        </button>
+      ) : null}
       <ShareMenu path={path} />
       <a
         href={GITHUB_REPO}
@@ -42,7 +51,7 @@ export function WorkTools({
   );
 }
 
-function ShareMenu({ path }: { path: "" | "/feld" }) {
+function ShareMenu({ path }: { path: "" | "/feld" | "/schnitt" }) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -65,7 +74,11 @@ function ShareMenu({ path }: { path: "" | "/feld" }) {
   }, [open]);
 
   const url = () =>
-    publicShareUrl(path, typeof window !== "undefined" ? window.location.hash : "");
+    publicShareUrl(
+      path,
+      typeof window !== "undefined" ? window.location.hash : "",
+      typeof window !== "undefined" && path !== "" ? window.location.search : "",
+    );
 
   async function copy() {
     const link = url();

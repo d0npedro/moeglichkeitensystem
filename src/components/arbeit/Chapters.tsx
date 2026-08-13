@@ -58,7 +58,7 @@ export function HowToRead() {
       title="Wie man diese Arbeit liest"
       about="Tablet. Kurze Sätze. Dieselben Wörter. Das Feld ist die Methode, kein Extra."
     >
-      <p>Diese Arbeit ist für ein Tablet geschrieben. Du kannst sie auch am Telefon lesen.</p>
+      <p>Diese Arbeit ist für ein Tablet geschrieben. Du kannst sie auch am Telefon lesen. Drucken macht eine Seite ohne Werkzeugleiste.</p>
       <p>Jedes Kapitel hat eine Aufgabe. Am Ende steht sie noch einmal in zwei Zeilen.</p>
       <p>
         Drei Wörter kehren immer wieder: Angebot. Umwelt. Lebensraum. Sie werden beim ersten Mal
@@ -220,6 +220,9 @@ export function LewinChapter() {
       <p>Hunger. Müdigkeit. Ein Termin. Ein geschlossenes Gitter. Das alles verschiebt den Raum.</p>
       <h3 className="pt-2 font-display text-2xl">Die kurze Formel</h3>
       <p>Lewin hat Verhalten in einen Satz gepresst.</p>
+      <p>
+        <span lang="en">B = f(P, E)</span>. Verhalten ist Funktion von Person und Lage.
+      </p>
       <p>Was du tust, hängt von dir ab. Und von der Lage.</p>
       <p>Die Lage, die zählt, ist nicht das GPS.</p>
       <p>Es ist der Lebensraum. Alles, was für dich jetzt psychisch wirklich ist.</p>
@@ -353,6 +356,12 @@ export function Wiring() {
       <p>Immer vom Körper aus. Immer mit einem Horizont, der sich ändern darf. Immer mit der Frage, wessen Körper das ist.</p>
       <p>Der Grundbaustein ist dasselbe Feld, dreimal gezeichnet.</p>
       <p>Die Verdrahtung kommt danach. Und nur, wenn die Differenz nicht verwischt wird.</p>
+      <p>
+        <Link to="/schnitt" className="underline-offset-4 hover:underline">
+          Fünf Schnitte, umweltgetrennt
+        </Link>
+        . Haus. Bestand. Gehen. Modell. Apparat. Zuerst simuliert.
+      </p>
       <Recap>Anwendungen sind keine Extra-Ideen. Sie sind die Beobachtung, sobald man sie baut.</Recap>
     </Chapter>
   );

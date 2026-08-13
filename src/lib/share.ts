@@ -8,7 +8,14 @@ export const SHARE_TEXT =
   "Möglichkeitensystem — freiwillige Doktorarbeit. Dieselbe Mitte, drei Welten.";
 
 /** Always the public path. Never the Vercel-Host. */
-export function publicShareUrl(path: "" | "/feld" = "", hash = "") {
+export function publicShareUrl(path: "" | "/feld" | "/schnitt" = "", hash = "", search = "") {
   const h = hash && hash.startsWith("#") ? hash : hash ? `#${hash}` : "";
-  return `${CANONICAL_URL}${path}${path ? "" : h}`;
+  const q = search
+    ? search.startsWith("?")
+      ? search
+      : `?${search}`
+    : "";
+  if (path === "/feld") return `${CANONICAL_URL}/feld${q}`;
+  if (path === "/schnitt") return `${CANONICAL_URL}/schnitt${q}`;
+  return `${CANONICAL_URL}${q}${h}`;
 }

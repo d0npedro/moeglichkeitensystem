@@ -4,6 +4,7 @@ import { WorkTools } from "@/components/site/WorkTools";
 import { GITHUB_REPO, CANONICAL_URL } from "@/lib/share";
 import { publicUrl } from "@/lib/paths";
 import { Glossary } from "./Glossary";
+import { Literature } from "./Literature";
 import {
   Abstract,
   Case,
@@ -98,6 +99,7 @@ export function Foundation() {
         <Method />
         <Wiring />
         <Glossary />
+        <Literature />
 
         <footer className="mt-20 border-t border-border pt-8 text-base leading-relaxed text-muted">
           <p>Pedda vom Mond · Köln</p>

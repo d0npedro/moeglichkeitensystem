@@ -2,14 +2,15 @@ import type {
   Affordance,
   Dimension,
   DimensionId,
+  LageId,
   ScaleBand,
   TimeOfDay,
   UmweltId,
   ViewedAffordance,
 } from "./types";
-import { AFFORDANCES } from "./affordances";
-import { LOCI } from "./loci";
-import { MACHINE_AFFORDANCES, UMWELTEN } from "./umwelten";
+import { allOffers, findLocus } from "./atlas";
+import { lageFactor } from "./lage";
+import { UMWELTEN } from "./umwelten";
 
 export const MIN_RADIUS_M = 1.2;
 export const MAX_RADIUS_M = 8000;
@@ -84,7 +85,9 @@ export const TIMES: { id: TimeOfDay; label: string; clock: string }[] = [
   { id: "nacht", label: "Nacht", clock: "22–07" },
 ];
 
-export const ALL_OFFERS: Affordance[] = [...AFFORDANCES, ...MACHINE_AFFORDANCES];
+export function ALL_OFFERS(): Affordance[] {
+  return allOffers();
+}
 
 export { UMWELTEN };
 
@@ -245,7 +248,7 @@ export function sinnReason(item: ViewedAffordance): string {
   return "gewusst, nicht gesehen";
 }
 
-function sinnScore(item: ViewedAffordance, radiusM: number): number {
+function sinnScore(item: ViewedAffordance, radiusM: number, lage: LageId, umwelt: UmweltId): number {
   if (!item.inRadius) return 0;
   const reach = Math.max(radiusM, 4);
   const closeness = 1 / (1 + item.distanceM / (reach * 0.38));
@@ -255,7 +258,8 @@ function sinnScore(item: ViewedAffordance, radiusM: number): number {
     item.requiresWalk && item.inFov && item.visibleStanding && item.distanceM < 14 ? 1.26 : 1;
   const inner = reach * 0.1;
   const recede = item.distanceM < inner ? 0.3 : 1;
-  return item.salience * closeness * look * now * walkSee * recede;
+  const lageMul = lageFactor(item, lage, umwelt);
+  return item.salience * closeness * look * now * walkSee * recede * lageMul;
 }
 
 export function viewFrom(
@@ -266,18 +270,19 @@ export function viewFrom(
   time: TimeOfDay,
   dimensions: DimensionId[],
   umwelt: UmweltId = "mensch",
+  lage: LageId = "neutral",
 ): ViewedAffordance[] {
-  const center = LOCI.find((l) => l.id === locusId);
+  const center = findLocus(locusId);
   if (!center) return [];
 
   const dimSet = new Set(dimensions);
   const viewed: ViewedAffordance[] = [];
 
-  for (const raw of ALL_OFFERS) {
+  for (const raw of allOffers()) {
     const owner = raw.umwelt ?? "mensch";
     if (owner !== umwelt) continue;
     if (!dimSet.has(raw.dimension)) continue;
-    const home = LOCI.find((l) => l.id === raw.locusId);
+    const home = findLocus(raw.locusId);
     if (!home) continue;
     const worldX = home.x + raw.lx;
     const worldY = home.y + raw.ly;
@@ -302,7 +307,7 @@ export function viewFrom(
       available,
       sinn: 0,
     };
-    item.sinn = sinnScore(item, radiusM);
+    item.sinn = sinnScore(item, radiusM, lage, umwelt);
     viewed.push(item);
   }
 
