@@ -9,7 +9,7 @@ export function Abstract() {
         Kurzfassung
       </h2>
       <div className="mt-8 space-y-5 text-lg leading-relaxed text-fg">
-        <p>Pedda steht in der Mitte seines Studios in Ehrenfeld. Nicht am Rechner.</p>
+        <p>Pedda steht in der Mitte seines Büros in Hürth. Nicht am Rechner.</p>
         <p>
           Im Blick: Lichtschalter an der Wand, Rollladen am Fenster. Beides sichtbar. Zu beidem muss
           er hingehen.
@@ -83,10 +83,10 @@ export function Case() {
     <Chapter
       id="fall"
       number="1"
-      title="Pedda steht im Zimmer"
+      title="Pedda steht im Büro"
       about="Der Fall ist der Ort. Kein Beispiel nebenbei."
     >
-      <p>Mitte des Studios. Nicht am Schreibtisch.</p>
+      <p>Mitte des Büros. Nicht am Schreibtisch.</p>
       <p>Vor ihm das Fenster und der Gurt des Rollladens. Rechts an der Wand der Lichtschalter. Daneben die Tür.</p>
       <p>Beides im Gesichtsfeld. Zu beidem ein paar Schritte.</p>
       <p>Ein Mensch würde hier das Licht ändern, den Blick zumuten, lüften.</p>
@@ -95,7 +95,7 @@ export function Case() {
       <p>Der Rechner steht an der Westwand. In dieser Haltung ist der Rechner nicht das Angebot des Raumes.</p>
       <h3 className="pt-2 font-display text-2xl">Wenn der Rand wächst</h3>
       <p>Nachbarräume: Wasserkocher, Sofa, Dusche.</p>
-      <p>Weiter: die Bäckerei an der Venloer. Nicht als Adresse. Als Bestand, der sich über den Tag leert.</p>
+      <p>Weiter: die Bäckerei. Nicht als Adresse. Als Bestand, der sich über den Tag leert.</p>
       <Recap>Der Fall beginnt in der Raummitte. Keine Karte. Kein Rechner als Zentrum.</Recap>
     </Chapter>
   );
@@ -185,8 +185,8 @@ export function UexkuellChapter() {
         <strong className="font-medium">Umwelt</strong> ist der Schnitt, der für dieses Wesen vorkommt.
       </p>
       <p>Die Umgebung ist der Wald. Die Umwelt der Zecke sind drei Zeichen.</p>
-      <h3 className="pt-2 font-display text-2xl">Im Studio</h3>
-      <p>Dein Studio hat eine andere Umwelt als die der Nachbarin.</p>
+      <h3 className="pt-2 font-display text-2xl">Im Büro</h3>
+      <p>Das Büro hat eine andere Umwelt als die der Nachbarin.</p>
       <p>Eine andere als die der Katze auf dem Sims.</p>
       <p>Eine andere als die des Rechners, der hier steht und nichts riecht.</p>
       <p>Die Bäckerei kommt in deiner Umwelt als Brötchen vor. Nicht als Grundbuchblatt.</p>
@@ -258,7 +258,7 @@ export function Together() {
         <li>Lewin: Was davon jetzt zählt.</li>
         <li>Uexküll: Wer dieser Körper überhaupt ist.</li>
       </ul>
-      <p>Deshalb beginnt die Arbeit nicht mit einer Karte von Köln. Sie beginnt in der Raummitte.</p>
+      <p>Deshalb beginnt die Arbeit nicht mit einer Karte. Sie beginnt in der Raummitte.</p>
       <p>Und sie bleibt ehrlich, wenn der Horizont wächst. Die Bäckerei ist kein Punkt. Sie ist ein Bestand, der sich über den Tag leert.</p>
       <Recap>Angebot: was möglich ist. Lebensraum: was jetzt zählt. Umwelt: für welches Wesen.</Recap>
     </Chapter>
@@ -271,7 +271,7 @@ export function Kernel() {
       id="kern"
       number="7"
       title="Maschinen haben andere Angebote"
-      about="Im selben Studio stehen ein Mensch, jemand der Software baut, und ein Apparat."
+      about="Im selben Büro stehen ein Mensch, jemand der Software baut, und ein Apparat."
     >
       <p>Ein Mensch sieht den Schalter und den Gurt.</p>
       <p>Jemand, der Software baut, sieht den Rechner, das Netz, Tokens, Logs, eine Dose unter dem Tisch.</p>

@@ -63,11 +63,11 @@ export function Foundation() {
           Möglichkeitensystem
         </p>
         <h1 className="mt-4 font-display text-4xl text-fg md:text-5xl">
-          Pedda steht in der Mitte seines Studios
+          Pedda steht in der Mitte seines Büros
         </h1>
         <p className="mt-6 text-xl leading-relaxed text-muted">
-          Ehrenfeld, Köln. Lichtschalter an der Wand. Rollladen am Fenster. Beides im Blick. Zu
-          beidem ein paar Schritte.
+          Hürth. Lichtschalter an der Wand. Rollladen am Fenster. Beides im Blick. Zu beidem ein paar
+          Schritte.
         </p>
 
         <div className="mt-8">
@@ -79,7 +79,7 @@ export function Foundation() {
         <figure className="reader-hide mt-12 overflow-hidden rounded-xl bg-wash shadow-soft md:mt-16">
           <img
             src={publicUrl("studio.jpg")}
-            alt="Blick aus der Mitte eines Wohnstudios. Fenster mit Rollladen geradeaus. Lichtschalter an der Wand rechts. Eine Gitarre steht im Rücken."
+            alt="Blick aus der Mitte des Büros. Fenster mit Rollladen geradeaus. Lichtschalter an der Wand rechts. Eine Gitarre steht im Rücken."
             className="aspect-photo w-full object-cover"
             crossOrigin="anonymous"
           />
@@ -103,7 +103,7 @@ export function Foundation() {
         <Literature />
 
         <footer className="mt-20 border-t border-border pt-8 text-base leading-relaxed text-muted">
-          <p>Pedda vom Mond · Köln</p>
+          <p>Pedda vom Mond · Hürth</p>
           <p className="mt-2">
             <a href={CANONICAL_URL} className="text-fg underline-offset-4 hover:underline">
               peddavommond.de/moeglichkeitensystem

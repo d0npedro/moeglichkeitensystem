@@ -61,7 +61,7 @@ export function Chapter({
 export const CHAPTERS = [
   { id: "kurzfassung", label: "Kurzfassung" },
   { id: "lesen", label: "Wie man diese Arbeit liest" },
-  { id: "fall", label: "1 · Das Studio" },
+  { id: "fall", label: "1 · Das Büro" },
   { id: "frage", label: "2 · Die Liste" },
   { id: "gibson", label: "3 · Angebot" },
   { id: "uexkuell", label: "4 · Umwelt" },

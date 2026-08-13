@@ -1,6 +1,6 @@
 # Möglichkeitensystem
 
-Pedda steht in der Mitte seines Studios in Ehrenfeld.
+Pedda steht in der Mitte seines Büros in Hürth.
 Lichtschalter an der Wand. Rollladen am Fenster. Beides im Blick. Zu beidem ein Schritt.
 
 Ein Mensch, jemand der Software baut, ein Roboter: drei Listen. Nicht eine.

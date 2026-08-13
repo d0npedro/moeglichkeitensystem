@@ -15,9 +15,9 @@ export interface Furnishing {
   h: number;
 }
 
-/** World metres: +x east, +y north. Apartment around the Ehrenfeld studio. */
+/** World metres: +x east, +y north. Wohnung in Hürth, Mitte im Büro. */
 export const APARTMENT_WALLS: WallSeg[] = [
-  // Studio
+  // Büro (locus id: studio, Home Assistant)
   { x1: -4.0, y1: -3.5, x2: 3.6, y2: -3.5, kind: "wall" },
   { x1: -4.0, y1: -3.5, x2: -4.0, y2: 4.1, kind: "wall" },
   { x1: -4.0, y1: 4.1, x2: -1.45, y2: 4.1, kind: "wall" },
@@ -63,7 +63,7 @@ export const STUDIO_FURNISHINGS: Furnishing[] = [
 ];
 
 export const ROOM_LABELS: { name: string; x: number; y: number }[] = [
-  { name: "Studio", x: 0, y: 0.2 },
+  { name: "Büro", x: 0, y: 0.2 },
   { name: "Flur", x: 4.55, y: 0.4 },
   { name: "Wohnzimmer", x: 8.1, y: 3.4 },
   { name: "Küche", x: 8.2, y: -2.8 },

@@ -156,7 +156,7 @@ export function OwnPlace({ onClose }: { onClose: () => void }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="mt-1 min-h-11 w-full rounded-md border border-border bg-surface px-3 text-fg"
-            placeholder="Studio, Küche, Hof"
+            placeholder="Büro, Küche, Hof"
           />
         </label>
         <label className="block text-sm">

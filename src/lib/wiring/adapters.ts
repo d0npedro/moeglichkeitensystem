@@ -166,7 +166,7 @@ export const gehenMensch: WiringAdapter<WalkRead> = {
   label: "Gehen · Mensch",
   hint: "Fuß zuerst. Bahn nur als Angebot.",
   read: (ctx) => ({
-    naechstes: ctx.radiusM < 80 ? "Venloer zu Fuß" : "Haltestelle, wenn der Horizont springt",
+    naechstes: ctx.radiusM < 80 ? "Straße vor der Tür" : "Haltestelle, wenn der Horizont springt",
     fuss: true,
     bahn: ctx.radiusM >= 200 ? "Linie als Angebot" : undefined,
   }),
@@ -178,7 +178,7 @@ export const gehenEntwickler: WiringAdapter<{ feed: string; latenz: string }> = 
   umwelt: "entwickler",
   label: "Gehen · Entwickler",
   hint: "Feed, nicht Bürgersteig.",
-  read: () => ({ feed: "Soll-Ist Haltestelle", latenz: "Zelle Venloer" }),
+  read: () => ({ feed: "Soll-Ist Haltestelle", latenz: "Zelle Hürth" }),
 };
 
 export const gehenRoboter: WiringAdapter<{ bordsteinCm: number; halt: string }> = {
@@ -220,7 +220,7 @@ export const apparatRoboter: WiringAdapter<ApparatRead> = {
     pfad:
       ctx.locusId === "treppenhaus"
         ? "Kein Pfad. Die Treppe ist ein Ende."
-        : "Simulation: freie Fläche im Studio, dann Flur, nicht die Treppe.",
+        : "Simulation: freie Fläche im Büro, dann Flur, nicht die Treppe.",
   }),
 };
 
