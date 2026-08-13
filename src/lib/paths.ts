@@ -4,6 +4,9 @@ export function publicUrl(path: string) {
   return `${base}${clean}`.replace(/\/{2,}/g, "/");
 }
 
-export const CANONICAL_ORIGIN = "https://peddavommond.de";
-export const CANONICAL_PATH = "/moeglichkeitensystem";
-export const CANONICAL_URL = `${CANONICAL_ORIGIN}${CANONICAL_PATH}`;
+export {
+  CANONICAL_ORIGIN,
+  CANONICAL_PATH,
+  CANONICAL_URL,
+  GITHUB_REPO,
+} from "./share";

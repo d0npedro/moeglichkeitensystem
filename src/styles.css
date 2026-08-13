@@ -85,6 +85,16 @@
     outline-offset: 3px;
   }
 
+  [data-reader="on"] .reader-hide,
+  [data-reader="on"] .reader-chrome {
+    display: none;
+  }
+
+  [data-reader="on"] main {
+    max-width: 38rem;
+    padding-top: 2.5rem;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--color-primary) 22%, transparent);
     color: var(--color-fg);

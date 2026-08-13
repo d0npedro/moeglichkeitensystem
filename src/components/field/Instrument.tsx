@@ -10,6 +10,7 @@ import {
 } from "@/lib/moeglichkeiten/model";
 import { useField } from "@/lib/moeglichkeiten/store";
 import { SiteNav } from "@/components/site/SiteNav";
+import { WorkTools } from "@/components/site/WorkTools";
 import { DimensionFilters } from "./DimensionFilters";
 import { FacingControl } from "./FacingControl";
 import { GazeStrip } from "./GazeStrip";
@@ -59,6 +60,9 @@ export function Instrument() {
   return (
     <div className="min-h-dvh overflow-x-hidden bg-bg text-fg">
       <SiteNav current="feld" wide />
+      <div className="border-b border-border px-4 py-1 sm:px-6">
+        <WorkTools path="/feld" />
+      </div>
 
       <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col gap-4 px-4 py-4 sm:px-6 lg:gap-5 lg:py-5">
         <section className="order-2 min-w-0 overflow-hidden rounded-xl border border-border bg-surface p-4 sm:p-5 lg:order-1">
