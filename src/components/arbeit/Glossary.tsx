@@ -24,7 +24,7 @@ const ENTRIES = [
   {
     id: "wort-angebot",
     term: "Angebot",
-    def: "Was ein Ort einem bestimmten Körper zu tun gibt. Nicht der Gegenstand selbst. Der Lichtschalter als Angebot heißt: drücken.",
+    def: "Was dieser Ort diesem Körper zu tun gibt. Der Lichtschalter heißt: drücken. Nicht: weiße Platte.",
   },
   {
     id: "wort-affordance",

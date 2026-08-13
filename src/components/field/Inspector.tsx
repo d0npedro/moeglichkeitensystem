@@ -23,8 +23,7 @@ export function Inspector({ item }: { item: ViewedAffordance | null }) {
         <p className="text-xs font-medium uppercase tracking-widest text-subtle">Auswahl</p>
         <h3 className="mt-2 font-display text-xl text-fg">Keine Marke gewählt</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Tippe eine Marke. Dieselbe Mitte trägt verschiedene Welten. Die Angebote gehören immer zu
-          einer davon.
+          Eine Marke antippen. Die Liste gehört zu einer Umwelt.
         </p>
       </section>
     );

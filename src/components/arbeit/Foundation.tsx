@@ -60,13 +60,14 @@ export function Foundation() {
 
       <main id="inhalt" className="mx-auto max-w-2xl px-5 pb-24 pt-10 md:max-w-3xl md:px-8 md:pt-16">
         <p className="text-xs font-medium tracking-widest text-subtle uppercase">
-          Freiwillige Doktorarbeit
+          Möglichkeitensystem
         </p>
         <h1 className="mt-4 font-display text-4xl text-fg md:text-5xl">
-          Was ein Ort einem Körper gibt
+          Pedda steht in der Mitte seines Studios
         </h1>
         <p className="mt-6 text-xl leading-relaxed text-muted">
-          Nicht, was irgendwo existiert. Was du von hier aus wirklich tun würdest. Und für wen.
+          Ehrenfeld, Köln. Lichtschalter an der Wand. Rollladen am Fenster. Beides im Blick. Zu
+          beidem ein paar Schritte.
         </p>
 
         <div className="mt-8">
@@ -83,7 +84,7 @@ export function Foundation() {
             crossOrigin="anonymous"
           />
           <figcaption className="px-4 py-3 text-base text-muted">
-            Standpunkt: Raummitte. Der Rechner ist da. Er ist nicht das Zentrum.
+            Raummitte. Der Rechner steht an der Westwand.
           </figcaption>
         </figure>
 

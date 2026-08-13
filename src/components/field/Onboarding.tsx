@@ -29,11 +29,11 @@ export function Onboarding({ onDone }: { onDone: () => void }) {
         aria-labelledby="onboard-titel"
         className="w-full max-w-lg rounded-xl border border-border bg-elevated p-5 shadow-soft"
       >
-        <p className="text-xs font-medium uppercase tracking-widest text-subtle">Sechzig Sekunden</p>
+        <p className="text-xs font-medium uppercase tracking-widest text-subtle">Ort</p>
         <h2 id="onboard-titel" className="mt-2 font-display text-2xl text-fg">
-          {step === 0 && "Ich stehe hier"}
-          {step === 1 && "Ich bin"}
-          {step === 2 && "Das sehe ich"}
+          {step === 0 && "Wo stehst du"}
+          {step === 1 && "Wer steht da"}
+          {step === 2 && "Was liegt im Blick"}
         </h2>
 
         {step === 0 ? (
