@@ -36,7 +36,7 @@ Nicht nachgewiesen vor dieser Kampagne: Tests der Kernlogik, Live-Uhr, eigene Mi
 
 ## Was als Nächstes den höchsten Hebel hat
 
-1. Production-Deploy und Canonical prüfen.
+1. Production liegt auf `main` (a6c78c4), Vercel READY. peddavommond.de/moeglichkeitensystem führt auf die Arbeit. Teilen bleibt die Canonical-Domain.
 2. Grüngürtel/Dom in allen drei Umwelten so hart wie Studio und Bäckerei.
 3. 390px Overflow und Kontrast mit echtem Viewport messen.
 4. Drei Umwelten nebeneinander, wenn das die letzte Verwechslung verhindert.
