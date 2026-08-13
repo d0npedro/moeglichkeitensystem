@@ -24,7 +24,7 @@ const ENTRIES = [
   {
     id: "wort-angebot",
     term: "Angebot",
-    def: "Was dieser Ort diesem Körper zu tun gibt. Der Lichtschalter heißt: drücken. Nicht: weiße Platte.",
+    def: "Was ein Ort einem bestimmten Körper zu tun gibt. Nicht der Gegenstand selbst. Der Lichtschalter als Angebot heißt: drücken.",
   },
   {
     id: "wort-affordance",
@@ -50,11 +50,6 @@ const ENTRIES = [
     id: "wort-horizont",
     term: "Horizont",
     def: "Der Rand des Lebensraums. Im Instrument der Radius. Was dahinter liegt, existiert. Es trägt gerade nicht.",
-  },
-  {
-    id: "wort-lage",
-    term: "Lage",
-    def: "Bei Lewin der Zustand der Person im Feld. Hunger, Müdigkeit, ein Termin. Die Lage ändert den Lebensraum. Nicht die Umgebung.",
   },
   {
     id: "wort-sinn",

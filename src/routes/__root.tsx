@@ -18,7 +18,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Pedda steht in der Mitte seines Büros in Hürth. Lichtschalter, Rollladen. Drei Listen für denselben Raum.",
+          "Freiwillige Doktorarbeit: dieselbe Mitte, drei Welten. Mensch, Entwickler, Roboter.",
       },
       { name: "apple-mobile-web-app-title", content: APP_NAME },
       { name: "theme-color", content: "#efe8dc" },

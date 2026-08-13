@@ -61,17 +61,16 @@ export function Chapter({
 export const CHAPTERS = [
   { id: "kurzfassung", label: "Kurzfassung" },
   { id: "lesen", label: "Wie man diese Arbeit liest" },
-  { id: "fall", label: "1 · Das Büro" },
-  { id: "frage", label: "2 · Die Liste" },
+  { id: "fall", label: "1 · Der Fall" },
+  { id: "frage", label: "2 · Die Frage" },
   { id: "gibson", label: "3 · Angebot" },
   { id: "uexkuell", label: "4 · Umwelt" },
   { id: "lewin", label: "5 · Lebensraum" },
   { id: "drei", label: "6 · Eine Beobachtung" },
-  { id: "kern", label: "7 · Andere Angebote" },
+  { id: "kern", label: "7 · Drei Welten" },
   { id: "methode", label: "8 · Das Instrument" },
   { id: "verdrahtung", label: "9 · Verdrahtung" },
   { id: "glossar", label: "Glossar" },
-  { id: "quellen", label: "Quellen" },
 ] as const;
 
 export function Contents() {

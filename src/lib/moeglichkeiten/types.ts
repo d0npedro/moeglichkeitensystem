@@ -11,11 +11,7 @@ export type ScaleId = "griff" | "raum" | "nachbar" | "haus" | "kiez" | "stadt";
 
 export type TimeOfDay = "morgen" | "tag" | "abend" | "nacht";
 
-export type LageId = "neutral" | "hungrig" | "satt" | "muede" | "termin";
-
 export type UmweltId = "mensch" | "entwickler" | "roboter";
-
-export type AtlasSource = "builtin" | "eigen";
 
 export type MarkShape = "circle" | "ring" | "diamond" | "square" | "triangle" | "dash" | "cross";
 
@@ -58,7 +54,6 @@ export interface Locus {
   y: number;
   defaultFacing: number;
   blurb: string;
-  source?: AtlasSource;
 }
 
 export interface Affordance {
@@ -75,19 +70,11 @@ export interface Affordance {
   requiresWalk: boolean;
   walkSeconds: number;
   salience: number;
-  /** Pflicht, sobald das Angebot eine Welt behauptet. Fehlt sie, gilt Mensch. */
   umwelt?: UmweltId;
   closedAt?: TimeOfDay[];
   inventory?: InventoryItem[];
   travelToLocusId?: string;
   features?: string[];
-  source?: AtlasSource;
-  wiring?: WiringRef;
-}
-
-export interface WiringRef {
-  domain: "haus" | "bestand" | "gehen" | "modell" | "apparat";
-  adapterId: string;
 }
 
 export interface ViewedAffordance extends Affordance {

@@ -4,7 +4,6 @@ import { WorkTools } from "@/components/site/WorkTools";
 import { GITHUB_REPO, CANONICAL_URL } from "@/lib/share";
 import { publicUrl } from "@/lib/paths";
 import { Glossary } from "./Glossary";
-import { Literature } from "./Literature";
 import {
   Abstract,
   Case,
@@ -60,14 +59,13 @@ export function Foundation() {
 
       <main id="inhalt" className="mx-auto max-w-2xl px-5 pb-24 pt-10 md:max-w-3xl md:px-8 md:pt-16">
         <p className="text-xs font-medium tracking-widest text-subtle uppercase">
-          Möglichkeitensystem
+          Freiwillige Doktorarbeit
         </p>
         <h1 className="mt-4 font-display text-4xl text-fg md:text-5xl">
-          Pedda steht in der Mitte seines Büros
+          Was ein Ort einem Körper gibt
         </h1>
         <p className="mt-6 text-xl leading-relaxed text-muted">
-          Hürth. Lichtschalter an der Wand. Rollladen am Fenster. Beides im Blick. Zu beidem ein paar
-          Schritte.
+          Nicht, was irgendwo existiert. Was du von hier aus wirklich tun würdest. Und für wen.
         </p>
 
         <div className="mt-8">
@@ -79,12 +77,12 @@ export function Foundation() {
         <figure className="reader-hide mt-12 overflow-hidden rounded-xl bg-wash shadow-soft md:mt-16">
           <img
             src={publicUrl("studio.jpg")}
-            alt="Blick aus der Mitte des Büros. Fenster mit Rollladen geradeaus. Lichtschalter an der Wand rechts. Eine Gitarre steht im Rücken."
+            alt="Blick aus der Mitte eines Wohnstudios. Fenster mit Rollladen geradeaus. Lichtschalter an der Wand rechts. Eine Gitarre steht im Rücken."
             className="aspect-photo w-full object-cover"
             crossOrigin="anonymous"
           />
           <figcaption className="px-4 py-3 text-base text-muted">
-            Raummitte. Der Rechner steht an der Westwand.
+            Standpunkt: Raummitte. Der Rechner ist da. Er ist nicht das Zentrum.
           </figcaption>
         </figure>
 
@@ -100,10 +98,9 @@ export function Foundation() {
         <Method />
         <Wiring />
         <Glossary />
-        <Literature />
 
         <footer className="mt-20 border-t border-border pt-8 text-base leading-relaxed text-muted">
-          <p>Pedda vom Mond · Hürth</p>
+          <p>Pedda vom Mond · Köln</p>
           <p className="mt-2">
             <a href={CANONICAL_URL} className="text-fg underline-offset-4 hover:underline">
               peddavommond.de/moeglichkeitensystem

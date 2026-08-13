@@ -4,44 +4,46 @@ import { Chapter, Recap } from "./shell";
 export function Abstract() {
   return (
     <section id="kurzfassung" aria-labelledby="kurzfassung-titel" className="mt-14 scroll-mt-24 md:mt-16">
-      <p className="text-xs font-medium tracking-widest text-subtle uppercase">Kurz</p>
+      <p className="text-xs font-medium tracking-widest text-subtle uppercase">Zuerst dies</p>
       <h2 id="kurzfassung-titel" className="mt-3 font-display text-3xl text-fg md:text-4xl">
         Kurzfassung
       </h2>
       <div className="mt-8 space-y-5 text-lg leading-relaxed text-fg">
-        <p>Pedda steht in der Mitte seines Büros in Hürth. Nicht am Rechner.</p>
+        <p>Diese Arbeit fragt eine Sache.</p>
+        <p>Was kann jemand an einem Ort wirklich tun?</p>
+        <p>Nicht: Was existiert dort?</p>
         <p>
-          Im Blick: Lichtschalter an der Wand, Rollladen am Fenster. Beides sichtbar. Zu beidem muss
-          er hingehen.
+          Die Antwort hängt davon ab, wer da steht. Ein Mensch. Ein Mensch, der Software baut. Ein
+          Roboter. Dieselbe Raummitte. Drei verschiedene Welten.
         </p>
+        <p>Drei Forscher haben das vorbereitet. Sie kannten einander nicht als Schule.</p>
+        <ul className="list-disc space-y-3 pl-5">
+          <li>
+            <a href="#gibson" className="underline-offset-4 hover:underline">
+              Gibson
+            </a>{" "}
+            sah: Ein Ort bietet Handlungen an. Nicht nur Gegenstände.
+          </li>
+          <li>
+            <a href="#uexkuell" className="underline-offset-4 hover:underline">
+              Uexküll
+            </a>{" "}
+            sah: Jedes Wesen hat seine eigene Welt.
+          </li>
+          <li>
+            <a href="#lewin" className="underline-offset-4 hover:underline">
+              Lewin
+            </a>{" "}
+            sah: Diese Welt hat einen Rand. Der Rand ändert sich.
+          </li>
+        </ul>
         <p>
-          Ein Mensch würde schalten und den Gurt ziehen. Jemand, der hier Software baut, sieht zuerst
-          den Rechner und die Dose. Ein Roboter sieht Boden, Türmaß, Schwelle.
-        </p>
-        <p>
-          <a href="#gibson" className="underline-offset-4 hover:underline">
-            Gibson
-          </a>
-          : der Schalter ist ein Angebot, keine weiße Platte.{" "}
-          <a href="#uexkuell" className="underline-offset-4 hover:underline">
-            Uexküll
-          </a>
-          : das ist nicht dieselbe Welt für alle drei.{" "}
-          <a href="#lewin" className="underline-offset-4 hover:underline">
-            Lewin
-          </a>
-          : der Rand dieser Welt verschiebt sich, wenn jemand Hunger hat oder die Bäckerei zu ist.
-        </p>
-        <p>
-          In{" "}
+          Der Kern steht in{" "}
           <a href="#kern" className="underline-offset-4 hover:underline">
             Kapitel 7
-          </a>{" "}
-          steht, warum eine gemeinsame Geräteliste die Verdrahtung falsch macht. Das{" "}
-          <Link to="/feld" className="underline-offset-4 hover:underline">
-            Feld
-          </Link>{" "}
-          zeichnet die drei Listen.
+          </a>
+          . Software und Hardware verdrahten das oft so, als gäbe es nur eine Liste für alle. Diese
+          Arbeit zeichnet die Liste dreimal. Die Verdrahtung kommt später.
         </p>
       </div>
     </section>
@@ -54,26 +56,27 @@ export function HowToRead() {
       id="lesen"
       number="0"
       title="Wie man diese Arbeit liest"
-      about="Tablet. Dieselben Wörter nach der ersten Erklärung. Das Feld gehört zur Arbeit."
+      about="Tablet. Kurze Sätze. Dieselben Wörter. Das Feld ist die Methode, kein Extra."
     >
-      <p>Geschrieben für ein Tablet. Am Telefon geht es auch. Drucken lässt die Leiste weg.</p>
-      <p>Jedes Kapitel endet mit zwei Zeilen.</p>
+      <p>Diese Arbeit ist für ein Tablet geschrieben. Du kannst sie auch am Telefon lesen.</p>
+      <p>Jedes Kapitel hat eine Aufgabe. Am Ende steht sie noch einmal in zwei Zeilen.</p>
       <p>
-        Drei Wörter bleiben fest: Angebot. Umwelt. Lebensraum. Erklärung einmal. Danach dieselben
-        Wörter. Das{" "}
+        Drei Wörter kehren immer wieder: Angebot. Umwelt. Lebensraum. Sie werden beim ersten Mal
+        erklärt. Danach bleiben sie. Ein{" "}
         <a href="#glossar" className="underline-offset-4 hover:underline">
           Glossar
         </a>{" "}
-        liegt hinten.
+        sammelt sie hinten.
       </p>
       <p>
         Das{" "}
         <Link to="/feld" className="underline-offset-4 hover:underline">
           Feld
         </Link>{" "}
-        ist die Prüfung. Oben drei Schalter: Mensch, Entwickler, Roboter.
+        ist kein Schmuck. Es ist die Methode. Dieselbe Mitte. Drei Schalter: Mensch, Entwickler,
+        Roboter.
       </p>
-      <Recap>Kurzfassung, Kapitel 1, Kapitel 7, dann das Feld.</Recap>
+      <Recap>Lies die Kurzfassung. Dann Kapitel 1 und Kapitel 7. Dann öffne das Feld.</Recap>
     </Chapter>
   );
 }
@@ -83,20 +86,24 @@ export function Case() {
     <Chapter
       id="fall"
       number="1"
-      title="Pedda steht im Büro"
-      about="Der Fall ist der Ort. Kein Beispiel nebenbei."
+      title="Du stehst im Zimmer"
+      about="Der Fall ist kein Beispiel neben der Theorie. Er ist der Ort, an dem die Theorie gilt."
     >
-      <p>Mitte des Büros. Nicht am Schreibtisch.</p>
-      <p>Vor ihm das Fenster und der Gurt des Rollladens. Rechts an der Wand der Lichtschalter. Daneben die Tür.</p>
-      <p>Beides im Gesichtsfeld. Zu beidem ein paar Schritte.</p>
-      <p>Ein Mensch würde hier das Licht ändern, den Blick zumuten, lüften.</p>
-      <h3 className="pt-2 font-display text-2xl">Was er weiß, ohne es zu sehen</h3>
-      <p>Die Gitarre steht hinter ihm.</p>
-      <p>Der Rechner steht an der Westwand. In dieser Haltung ist der Rechner nicht das Angebot des Raumes.</p>
+      <p>Nicht am Schreibtisch. In der Mitte.</p>
+      <p>Vor dir das Fenster. Der Gurt des Rollladens. Rechts an der Wand der Lichtschalter. Daneben die Tür.</p>
+      <p>Beides siehst du, ohne dich umzudrehen. Zu beidem müsstest du ein paar Schritte gehen.</p>
+      <p>Das sind die nächsten sinnvollen Dinge, die dieser Raum dir jetzt gibt.</p>
+      <p>Nicht weil sie teuer sind. Nicht weil sie smart sind. Weil ein Mensch genau das hier tun würde.</p>
+      <p>Licht ändern. Blick dosieren. Lüften.</p>
+      <h3 className="pt-2 font-display text-2xl">Was du weißt, ohne es zu sehen</h3>
+      <p>Die Gitarre steht hinter dir. Du weißt das. Du siehst sie nicht.</p>
+      <p>Der Rechner steht an der Westwand. Er ist da. In dieser Haltung ist er nicht das Angebot des Raumes.</p>
       <h3 className="pt-2 font-display text-2xl">Wenn der Rand wächst</h3>
-      <p>Nachbarräume: Wasserkocher, Sofa, Dusche.</p>
-      <p>Weiter: die Bäckerei. Nicht als Adresse. Als Bestand, der sich über den Tag leert.</p>
-      <Recap>Der Fall beginnt in der Raummitte. Keine Karte. Kein Rechner als Zentrum.</Recap>
+      <p>Weitest du den Horizont, kommen die Nachbarräume. Wasserkocher. Sofa. Dusche.</p>
+      <p>Noch weiter die Bäckerei an der Venloer. Nicht als Adresse. Als Bestand.</p>
+      <p>Welche Brötchen heute da sind. Welche nach zehn schon weg sind.</p>
+      <p>Genau das zeichnet das Möglichkeitensystem.</p>
+      <Recap>Der Fall beginnt in der Raummitte. Nicht auf einer Karte. Nicht am Rechner.</Recap>
     </Chapter>
   );
 }
@@ -106,19 +113,20 @@ export function Question() {
     <Chapter
       id="frage"
       number="2"
-      title="Eine Geräteliste kennt den Standpunkt nicht"
-      about="Wohnungs-App, Navigation, Stadtkarte zählen, was da ist. Sie zählen nicht, wer da steht."
+      title="Die Frage ist nicht: Was existiert?"
+      about="Drei übliche Antworten verfehlen den Ort. Inventar. Route. Stadt. Alle zählen Dinge. Keine fragt nach dem Standpunkt."
     >
-      <p>Viele Systeme kennen den Raum als Liste.</p>
+      <p>Viele Systeme kennen den Raum. Sie kennen ihn als Liste.</p>
       <ul className="list-disc space-y-3 pl-5">
-        <li>Die Wohnung als Geräte. Licht, Heizung, Rollladen, alle gleich lang in einer App.</li>
-        <li>Die Stadt als kürzeste Linie. Asphalt, Minuten, kein Hunger.</li>
-        <li>Die Bäckerei als Punkt. Name, Öffnungszeit, kein Bestand.</li>
+        <li>Die Wohnung als Geräte. Licht. Heizung. Rollladen. Alle gleich lang in einer App.</li>
+        <li>Die Stadt als kürzeste Linie. Asphalt. Minuten. Kein Hunger.</li>
+        <li>Die Bäckerei als Punkt auf der Karte. Name. Öffnungszeit. Kein Bestand.</li>
       </ul>
-      <p>Die Listen beantworten: Was ist dort?</p>
-      <p>Hier zählt: Was würde Pedda von der Raummitte aus jetzt nutzen. Und was ein anderer Körper.</p>
-      <p>Dann reicht eine gemeinsame Liste nicht.</p>
-      <Recap>Was existiert, ist noch kein Angebot.</Recap>
+      <p>Diese Listen sind nicht falsch. Sie sind eine andere Frage.</p>
+      <p>Sie fragen: Was ist dort?</p>
+      <p>Diese Arbeit fragt: Was würde man dort wirklich nutzen? Von hier aus. Jetzt. Mit diesem Körper.</p>
+      <p>Sobald die Frage wechselt, reicht eine gemeinsame Liste nicht mehr.</p>
+      <Recap>Existenz ist nicht Angebot. Die Doktorarbeit beginnt bei diesem Schnitt.</Recap>
     </Chapter>
   );
 }
@@ -185,8 +193,8 @@ export function UexkuellChapter() {
         <strong className="font-medium">Umwelt</strong> ist der Schnitt, der für dieses Wesen vorkommt.
       </p>
       <p>Die Umgebung ist der Wald. Die Umwelt der Zecke sind drei Zeichen.</p>
-      <h3 className="pt-2 font-display text-2xl">Im Büro</h3>
-      <p>Das Büro hat eine andere Umwelt als die der Nachbarin.</p>
+      <h3 className="pt-2 font-display text-2xl">Im Studio</h3>
+      <p>Dein Studio hat eine andere Umwelt als die der Nachbarin.</p>
       <p>Eine andere als die der Katze auf dem Sims.</p>
       <p>Eine andere als die des Rechners, der hier steht und nichts riecht.</p>
       <p>Die Bäckerei kommt in deiner Umwelt als Brötchen vor. Nicht als Grundbuchblatt.</p>
@@ -212,9 +220,6 @@ export function LewinChapter() {
       <p>Hunger. Müdigkeit. Ein Termin. Ein geschlossenes Gitter. Das alles verschiebt den Raum.</p>
       <h3 className="pt-2 font-display text-2xl">Die kurze Formel</h3>
       <p>Lewin hat Verhalten in einen Satz gepresst.</p>
-      <p>
-        <span lang="en">B = f(P, E)</span>. Verhalten ist Funktion von Person und Lage.
-      </p>
       <p>Was du tust, hängt von dir ab. Und von der Lage.</p>
       <p>Die Lage, die zählt, ist nicht das GPS.</p>
       <p>Es ist der Lebensraum. Alles, was für dich jetzt psychisch wirklich ist.</p>
@@ -258,9 +263,9 @@ export function Together() {
         <li>Lewin: Was davon jetzt zählt.</li>
         <li>Uexküll: Wer dieser Körper überhaupt ist.</li>
       </ul>
-      <p>Deshalb beginnt die Arbeit nicht mit einer Karte. Sie beginnt in der Raummitte.</p>
+      <p>Deshalb beginnt die Arbeit nicht mit einer Karte von Köln. Sie beginnt in der Raummitte.</p>
       <p>Und sie bleibt ehrlich, wenn der Horizont wächst. Die Bäckerei ist kein Punkt. Sie ist ein Bestand, der sich über den Tag leert.</p>
-      <Recap>Angebot: was möglich ist. Lebensraum: was jetzt zählt. Umwelt: für welches Wesen.</Recap>
+      <Recap>Angebot sagt, was möglich ist. Lebensraum sagt, was jetzt zählt. Umwelt sagt, für wen.</Recap>
     </Chapter>
   );
 }
@@ -270,24 +275,28 @@ export function Kernel() {
     <Chapter
       id="kern"
       number="7"
-      title="Maschinen haben andere Angebote"
-      about="Im selben Büro stehen ein Mensch, jemand der Software baut, und ein Apparat."
+      title="Dieselbe Mitte, drei Welten"
+      about="Die drei Namen reichen nicht. Im selben Studio stehen heute nicht nur Menschen."
     >
       <p>Ein Mensch sieht den Schalter und den Gurt.</p>
-      <p>Jemand, der Software baut, sieht den Rechner, das Netz, Tokens, Logs, eine Dose unter dem Tisch.</p>
-      <p>Ein Roboter sieht Boden, Türmaß, Schwelle, Steckdose, Glas.</p>
-      <p>Der Rollladen bleibt derselbe Gegenstand.</p>
+      <p>Ein Mensch, der Software baut, sieht den Rechner. Das Netz. Was sich anbinden lässt. Tokens. Logs. Eine Dose unter dem Tisch.</p>
+      <p>Ein Roboter sieht Boden. Türmaß. Schwelle. Steckdose. Glas.</p>
+      <p>Denselben Rollladen.</p>
       <ul className="list-disc space-y-3 pl-5">
-        <li>Für Pedda: Licht dosieren.</li>
+        <li>Für dich: Licht.</li>
         <li>Für den Schirm: Blendung.</li>
         <li>Für den Arm: ein Tuch an einer Schnur.</li>
       </ul>
-      <h3 className="pt-2 font-display text-2xl">Der Kern</h3>
-      <p>Ein Roboter hat in diesem Zimmer Angebote. Es sind nicht die des Menschen.</p>
-      <p>Software und Hardware werden oft so verdrahtet, als gäbe es eine Liste für alle.</p>
-      <p>Die erste Frage ist: wessen Umwelt.</p>
-      <p>Uexküll: Wesen, nicht Stimmung. Gibson: Handlung, nicht Ding. Lewin: Horizont, nicht Meter.</p>
-      <Recap>Wer die drei Listen vermengt, verdrahtet falsch. Auch mit guter Technik.</Recap>
+      <h3 className="pt-2 font-display text-2xl">Der Kern in einem Schnitt</h3>
+      <p>Nicht, dass Maschinen auch Angebote haben.</p>
+      <p>Sondern dass sie andere haben.</p>
+      <p>Software und Hardware werden oft so verdrahtet, als gäbe es nur eine Welt, die alle teilen.</p>
+      <p>Inventar. Karte. Schnittstelle.</p>
+      <p>Die erste Frage ist immer: Wessen Umwelt?</p>
+      <p>Uexküll an der härtesten Stelle. Nicht Stimmung. Wesen.</p>
+      <p>Gibson an jeder Marke. Nicht Ding. Handlung.</p>
+      <p>Lewin am Rand. Nicht Meter. Horizont.</p>
+      <Recap>Drei Umwelten im selben Zimmer. Wer das verwischt, verdrahtet falsch. Auch mit guter Technik.</Recap>
     </Chapter>
   );
 }
@@ -298,7 +307,7 @@ export function Method() {
       id="methode"
       number="8"
       title="Das Feld ist die Methode"
-      about="Dieselbe Behauptung, gezeichnet."
+      about="Kein Bild neben dem Text. Dieselbe Behauptung, diesmal gezeichnet."
     >
       <p>Im Instrument stehst du in der Raummitte.</p>
       <p>Oben die Umwelt. Mensch. Entwickler. Roboter.</p>
@@ -329,24 +338,22 @@ export function Wiring() {
     <Chapter
       id="verdrahtung"
       number="9"
-      title="Was sich verdrahten lässt"
-      about="Folgen der Beobachtung. Keine Produktliste."
+      title="Was sich verdrahten lässt. Später."
+      about="Keine Produktliste. Folgen, die da sind, sobald man die Beobachtung ernst nimmt."
     >
-      <p>Eine App, die alle Geräte der Wohnung auflistet, ist noch kein Möglichkeitensystem. Sie kennt Inventar, nicht den Standpunkt.</p>
-      <p>Eine Navigation kennt Asphalt. Sie kennt nicht, dass um halb acht nur das Milchbrötchen zählt.</p>
-      <p>Eine Stadtkarte kennt Häuser. Sie kennt Peddas Umwelt nicht.</p>
+      <p>Wenn das stimmt, ist eine App, die alle Geräte der Wohnung auflistet, noch kein Möglichkeitensystem.</p>
+      <p>Sie kennt Inventar. Sie kennt nicht den Standpunkt.</p>
+      <p>Eine Navigation kennt Asphalt. Sie kennt nicht, dass du um halb acht nur das Milchbrötchen willst.</p>
+      <p>Eine Stadt, die alles erfasst, kennt Häuser. Sie kennt nicht deine Umwelt.</p>
       <h3 className="pt-2 font-display text-2xl">Wohin die Schnur gehen kann</h3>
-      <p>Ein Haus gibt dem Körper den Schalter und der Maschine die Dose.</p>
-      <p>Ein Laden zeigt den Bestand und dem Apparat die Stufe.</p>
-      <p>Ein Modell kennt den Horizont dessen, der fragt, nicht „die Stadt“.</p>
-      <p>Die Verdrahtung kommt nach der Differenz. Nicht davor.</p>
-      <p>
-        <Link to="/schnitt" className="underline-offset-4 hover:underline">
-          Fünf Schnitte, umweltgetrennt
-        </Link>
-        . Haus. Bestand. Gehen. Modell. Apparat. Zuerst simuliert.
-      </p>
-      <Recap>Die Schnitte folgen aus den drei Listen. Sie sind kein Extra-Produkt.</Recap>
+      <p>Ein Haus, das dem Körper den Schalter gibt. Und der Maschine die Dose.</p>
+      <p>Ein Laden, der dir den Bestand zeigt. Und dem Apparat die Stufe.</p>
+      <p>Ein Modell, das nicht die Stadt kennt. Sondern den Horizont dessen, der fragt.</p>
+      <p>Wohnen. Gehen. Einkaufen. Spielen. Pflegen. Lernen.</p>
+      <p>Immer vom Körper aus. Immer mit einem Horizont, der sich ändern darf. Immer mit der Frage, wessen Körper das ist.</p>
+      <p>Der Grundbaustein ist dasselbe Feld, dreimal gezeichnet.</p>
+      <p>Die Verdrahtung kommt danach. Und nur, wenn die Differenz nicht verwischt wird.</p>
+      <Recap>Anwendungen sind keine Extra-Ideen. Sie sind die Beobachtung, sobald man sie baut.</Recap>
     </Chapter>
   );
 }
