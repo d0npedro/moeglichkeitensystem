@@ -2,7 +2,7 @@ node_modules
 .vercel
 .output
 dist
-screenshots
+/screenshots
 artifacts
 attachments
 *.log

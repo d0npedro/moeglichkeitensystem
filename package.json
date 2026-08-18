@@ -1,6 +1,15 @@
 {
-  "name": "app-builder-workspace",
+  "name": "moeglichkeitensystem",
+  "version": "0.1.0",
   "private": true,
+  "description": "Arbeit und Instrument: Angebot, Umwelt, Lebensraum. Drei Listen für denselben Raum.",
+  "homepage": "https://peddavommond.de/moeglichkeitensystem",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d0npedro/moeglichkeitensystem.git"
+  },
+  "author": "Pedda vom Mond",
+  "license": "SEE LICENSE IN LICENSE",
   "sideEffects": false,
   "type": "module",
   "overrides": {
@@ -13,9 +22,10 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview --host 0.0.0.0 --port 8080",
     "typecheck": "tsc --noEmit",
-    "test": "node --test 'scripts/**/*.test.mjs'",
+    "test": "tsx --test src/lib/moeglichkeiten/kernel.test.ts",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "shots": "node scripts/capture-readme.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",
@@ -86,6 +96,7 @@
     "nitro": "3.0.260610-beta",
     "playwright": "^1.62.0",
     "prettier": "^3.4.0",
+    "tsx": "^4.23.12",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
